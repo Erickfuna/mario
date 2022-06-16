@@ -9,11 +9,8 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
     game.over(false)
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleBlueCrystal, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`level2`)
-})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
-    info.changeScoreBy(50)
+    info.changeScoreBy(info.highScore())
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileGrass2, function (sprite, location) {
     game.over(true)
